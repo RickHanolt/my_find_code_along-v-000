@@ -1,4 +1,4 @@
-# Code Along: Building the `find` method 
+# Code Along: Building the `find` method
 
 ##Objectives
 * Continue to practice using yield and blocks
@@ -35,7 +35,7 @@ def my_find(collection)
 end
 ```
 
-When this code is run and it hits the `yield` line, it is going to send whatever is passed in as the argument to the block. 
+When this code is run and it hits the `yield` line, it is going to send whatever is passed in as the argument to the block.
 
 *Note: If you are confused about where the block comes from, it becomes clearer after the method is called. Here's an example:*
 
@@ -108,3 +108,11 @@ Our method will return the first element in the array that evaluates to `true`. 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/my_find_code_along' title='Code Along: Building the find method'>Code Along: Building the find method</a> on Learn.co and start learning to code for free.</p>
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/my_find_code_along'>My Find Lab</a> on Learn.co and start learning to code for free.</p>
+
+def my_find(collection)
+  i = 0
+  while i < collection.length
+    return collection[i] if yield(collection[i])
+    i += 1
+  end
+end
